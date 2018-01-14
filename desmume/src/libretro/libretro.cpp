@@ -869,9 +869,6 @@ void retro_run (void)
     else
         NDS_releaseTouch();
 
-    // BUTTONS
-    NDS_beginProcessingInput();
-    
    NDS_setPad(
       input_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_RIGHT),
       input_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_LEFT),
@@ -888,7 +885,10 @@ void retro_run (void)
       0, // debug
       input_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L2) //Lid
    );
-   
+
+    // BUTTONS
+    NDS_beginProcessingInput();
+
   if (!microphone_force_enable)
   {
     if(input_cb(0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L3))
