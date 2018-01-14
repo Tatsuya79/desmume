@@ -270,6 +270,7 @@ static void check_variables(void)
 
 	var.key = "desmume_pointer_mouse";
 
+
 	if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
 	{
 		if (!strcmp(var.value, "enable"))
@@ -826,6 +827,7 @@ void retro_run (void)
 		
 	}
 
+
 	if(mouse_enable)
     {
 		// TOUCH: Mouse
@@ -918,6 +920,7 @@ void retro_run (void)
     frameIndex ++;
     bool skipped = frameIndex <= frameSkip;
 
+
     if (skipped)
        NDS_SkipNextFrame();
 
@@ -928,6 +931,7 @@ void retro_run (void)
         SwapScreens(render_fullscreen);
 
     video_cb(skipped ? 0 : screenSwap, screenLayout->width, screenLayout->height, screenLayout->pitchInPix * (render_fullscreen ? 1 : 2));
+
 
     frameIndex = skipped ? frameIndex : 0;
 }

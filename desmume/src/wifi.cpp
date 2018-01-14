@@ -313,7 +313,7 @@ WifiComInterface* wifiCom;
 
 #define WIFI_LOG_USE_LOGC 0
 
-#if (WIFI_LOGGING_LEVEL >= 1)
+#if (0)
 	#if WIFI_LOG_USE_LOGC
 		#define WIFI_LOG(level, ...) if(level <= WIFI_LOGGING_LEVEL) LOGC(8, "WIFI: "__VA_ARGS__);
 	#else
